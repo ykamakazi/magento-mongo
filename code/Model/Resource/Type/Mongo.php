@@ -15,7 +15,7 @@ class Cm_Mongo_Model_Resource_Type_Mongo extends Mage_Core_Model_Resource_Type_A
     require_once 'mongodb-php-odm'.DS.'classes'.DS.'mongo'.DS.'database.php';
     require_once 'mongodb-php-odm'.DS.'classes'.DS.'mongo'.DS.'collection.php';
 
-    $conn = Mongo_Database::instance((string)$config->config, $config->asCanonicalArray());
+    $conn = Mongo_Database::instance((string)$config->config, $config);
 
     // Set profiler
     $conn->set_profiler(array($this, 'start_profiler'), array($this, 'stop_profiler'));
